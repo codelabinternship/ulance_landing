@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
 
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="bg-[#0F172A] text-white py-10">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -12,7 +15,7 @@ const Footer = () => {
             <span className="ml-2 text-xl font-semibold">UZLANCE</span>
           </div>
           <p className="text-gray-400 text-sm">
-            Создаем цифровые решения, которые помогают бизнесу расти и развиваться в современном мире.
+            {t("We create digital solutions that help businesses grow and develop in today's world.")}
           </p>
           <div className="flex gap-3 mt-4">
             <div className="w-8 h-8 bg-gray-700 rounded-md" />
@@ -22,36 +25,66 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-3">О нас</h3>
+          <h3 className="text-lg font-semibold mb-3">
+          {t('About us')}
+            
+          </h3>
           <ul className="space-y-2 text-gray-400 text-sm">
-            <li><a href="#">Наша команда</a></li>
-            <li><a href="#">Проекты</a></li>
-            <li><a href="#">Отзывы</a></li>
-            <li><a href="#">Карьера</a></li>
+            <li><a href="#">
+              {t('Our team')}
+              </a></li>
+            <li><a href="#">
+             {t('Projects')}
+              </a></li>
+            <li><a href="#">
+              {t('Reviews')}
+              </a></li>
+            <li><a href="#">
+              {t('Career')}
+              </a></li>
+
           </ul>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-3">Услуги</h3>
+          <h3 className="text-lg font-semibold mb-3">
+           {t('Services')}
+            </h3>
           <ul className="space-y-2 text-gray-400 text-sm">
-            <li><a href="#">Веб-разработка</a></li>
-            <li><a href="#">Мобильные приложения</a></li>
-            <li><a href="#">Создание ботов</a></li>
-            <li><a href="#">Консультации</a></li>
+            <li><a href="#">
+             {t('Website development')}
+              </a></li>
+            <li><a href="#" >
+              {t('Mobile applications')}
+            </a></li>
+            <li><a href="#">
+             {t('Creating Bots')}
+              </a></li>
+            <li><a href="#">
+              {t('Consultations')}
+              </a></li>
           </ul>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-3">Контакты</h3>
+          <h3 className="text-lg font-semibold mb-3">
+            {t('Contacts')}
+          </h3>
           <ul className="space-y-2 text-gray-400 text-sm">
             <li>
-              <span className="text-white font-medium">Телефон:</span><br />
+              <span className="text-white font-medium">
+              {t('Number')}
+                </span><br />
               +998 (95) 010 44 13
             </li>
             <li>
-              <span className="text-white font-medium">Email:</span><br />
+              <span className="text-white font-medium">
+                {t('Email')}
+              </span><br />
               info@uzlance.uz
             </li>
             <li>
-              <span className="text-white font-medium">Адрес:</span><br />
+              <span className="text-white font-medium">
+               {t('Adress')}
+              </span><br />
               Ташкент, Узбекистан
             </li>
           </ul>
