@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-md flex items-center justify-center text-white font-bold text-lg">
               U
             </div>
-            <span className="ml-2 text-xl font-semibold">UZLANCE</span>
+            <span className="ml-2 text-xl font-semibold">ULANCE</span>
           </div>
           <p className="text-gray-400 text-sm">
             {t("We create digital solutions that help businesses grow and develop in today's world.")}
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h3 className="text-lg font-semibold mb-3">
+          <h3 className="text-lg font-semibold mb-3 cursor">
           {t('About us')}
             
           </h3>
@@ -79,7 +79,7 @@ const Footer = () => {
               <span className="text-white font-medium">
                 {t('Email')}
               </span><br />
-              info@uzlance.uz
+              info@ulance.uz
             </li>
             <li>
               <span className="text-white font-medium">
@@ -91,7 +91,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-gray-400 text-sm">
-        © 2024 UZLANCE. Все права защищены. Создано с ❤️ в Узбекистане
+        © 2024 ULANCE. Все права защищены. Создано с ❤️ в Узбекистане
       </div>
     </footer>
   );
