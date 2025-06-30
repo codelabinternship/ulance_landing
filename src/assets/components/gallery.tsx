@@ -1,11 +1,10 @@
 
-import { useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
 const Gallery = () => {
    const { t } = useTranslation();
-  const [page, setPage] = useState(1);
+  const page = 1;
   const itemsPerPage = 6;
 
   const data = Array.from({ length: 12 }, (_, index) => ({
@@ -13,7 +12,7 @@ const Gallery = () => {
     title: `Card ${index + 1}`,
   }));
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  // const totalPages = Math.ceil(data.length / itemsPerPage);
   const pageItems = data.slice(
     (page - 1) * itemsPerPage,
     page * itemsPerPage
