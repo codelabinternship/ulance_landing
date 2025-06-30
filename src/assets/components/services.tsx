@@ -34,7 +34,7 @@ function Services() {
   ];
 
   return (
-    <section>
+    <section className='px-6'>
       <div id="services" className="flex justify-center">
         <h3 className="inline-block text-sm text-[#93C5FD] bg-[#42537C] px-4 py-2 mb-[30px] text-center rounded-full">
           {t("Our services")}

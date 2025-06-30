@@ -45,7 +45,7 @@ const Gallery = () => {
           </div>
         ))}
       </div>
-
+{/* 
       <div className="flex justify-center items-center mt-8 space-x-2">
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
@@ -75,7 +75,7 @@ const Gallery = () => {
         >
           {">"}
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };
