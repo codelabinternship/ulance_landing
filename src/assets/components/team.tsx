@@ -8,13 +8,13 @@ const teamData = [
   {
     name: "Odiljonov Behruz",
     role: "Backend Developer",
-    Image: '/public/bexruz-img.jpg'
+    Image: '/bexruz-img.jpg'
   },
 
   {
     name: "Rustamov Ibrohim",
     role: "Frontend Developer",
-    Image: 'public/ibrohim-img.jpg'
+    Image: '/ibrohim-img.jpg'
   },
 
   {
@@ -33,13 +33,13 @@ const teamData = [
   {
     name: "Xo`jayev Temur",
     role: "Team Leader",
-    Image: 'public/temur-img.jpg'
+    Image: '/temur-img.jpg'
   },
 
   {
     name: "Javohir Raximbayev",
     role: "Backend Developer",
-    Image: 'public/javohir-img.jpg'
+    Image: '/javohir-img.jpg'
   },
 
   // {
