@@ -6,37 +6,37 @@ const teamData = [
   {
     name: "Odiljonov Behruz",
     role: "Frontend Developer",
-    Image: '/public/bexruz-img.jpg'
+    Image: '/bexruz-img.jpg',
   },
   {
     name: "Rustamov Ibrohim",
     role: "Frontend Developer",
-    Image: 'public/ibrohim-img.jpg'
+    Image: '/ibrohim-img.jpg',
   },
   {
     name: "Azamova Laziza",
     role: "Frontend Developer",
-    Image: '/laziza-img.jpg'
+    Image: '/laziza-img.jpg',
   },
   {
     name: "Abduraxmonov Sharif",
     role: "Project Manager",
-    Image : '/sharif_img.jpg'
+    Image: '/sharif_img.jpg',
   },
   {
     name: "Xo`jayev Temur",
     role: "Team Leader",
-    Image: 'public/temur-img.jpg'
+    Image: '/temur-img.jpg',
   },
   {
     name: "Javohir Raximbayev",
     role: "Backend Developer",
-    Image: 'public/javohir-img.jpg'
+    Image: '/javohir-img.jpg',
   },
   {
     name: "Rahmatjonov Abdulloh",
-    role: "Data Size",
-    Image: 'public/abdullox-img.jpg'
+    role: "Data Scientist", 
+    Image: '/abdullox-img.jpg',
   },
 ];
 
@@ -56,7 +56,7 @@ function Team() {
       }
     };
 
-    updateCardsToShow(); 
+    updateCardsToShow();
     window.addEventListener("resize", updateCardsToShow);
     return () => window.removeEventListener("resize", updateCardsToShow);
   }, []);
@@ -90,12 +90,12 @@ function Team() {
       </p>
 
       <div className="relative flex items-center justify-center">
-
         <button
           onClick={handlePrev}
           disabled={startIndex === 0}
-          className={`absolute left-0 z-10 bg-gray-800 p-2 rounded-full text-white shadow-md transition ${startIndex === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-700"
-            }`}
+          className={`absolute left-0 z-10 bg-gray-800 p-2 rounded-full text-white shadow-md transition ${
+            startIndex === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-700"
+          }`}
           aria-label="Previous"
         >
           <ChevronLeft size={28} />
@@ -107,9 +107,9 @@ function Team() {
               key={`${person.name}-${index}`}
               className="bg-gray-700 rounded-xl w-72 p-6 text-center text-white relative shadow-lg"
             >
-              <div className="mx-auto w-[100px] h-20 rounded-full mb-4 ">
+              <div className="mx-auto w-[100px] h-[100px] rounded-full overflow-hidden mb-4">
                 <img
-                  className="object-cover h-[100px] w-[100px] rounded-full"
+                  className="object-cover h-full w-full rounded-full"
                   src={person.Image}
                   alt={person.name}
                 />
@@ -123,10 +123,11 @@ function Team() {
         <button
           onClick={handleNext}
           disabled={startIndex + cardsToShow >= teamData.length}
-          className={`absolute right-0 z-10 bg-gray-800 p-2 rounded-full text-white shadow-md transition ${startIndex + cardsToShow >= teamData.length
+          className={`absolute right-0 z-10 bg-gray-800 p-2 rounded-full text-white shadow-md transition ${
+            startIndex + cardsToShow >= teamData.length
               ? "opacity-30 cursor-not-allowed"
               : "hover:bg-gray-700"
-            }`}
+          }`}
           aria-label="Next"
         >
           <ChevronRight size={28} />

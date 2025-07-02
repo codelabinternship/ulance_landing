@@ -4,13 +4,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Gallery = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
-
   const { t } = useTranslation();
   const [page, setPage] = useState(1);
   const itemsPerPage = 6;
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   const data = [
     { id: 1, Image: '/zein.project.jpg' },
@@ -50,12 +50,31 @@ const Gallery = () => {
           >
             <img
               className="object-cover h-full w-full rounded-lg"
-              src={item.Image}
+              src={item.Image || '/placeholder.jpg'}
+              alt={`Project ${item.id}`}
             />
           </div>
         ))}
       </div>
 
+      {totalPages > 1 && (
+        <div className="flex justify-center mt-8 space-x-4">
+          <button
+            onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
+            disabled={page === 1}
+            className="bg-[#1E4741] px-4 py-2 rounded text-[#86EFAC] disabled:opacity-50"
+          >
+            {t('Previous')}
+          </button>
+          <button
+            onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
+            disabled={page === totalPages}
+            className="bg-[#1E4741] px-4 py-2 rounded text-[#86EFAC] disabled:opacity-50"
+          >
+            {t('Next')}
+          </button>
+        </div>
+      )}
     </section>
   );
 };
