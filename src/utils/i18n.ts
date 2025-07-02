@@ -10,7 +10,7 @@ const resources = {
       "Our team": "Bizning jamoamiz",
       "About us": "Biz haqimizda ",
       "Projects": "Loyihalar ",
-      "Innovative solutions": "Innovatsion echimlar",
+      "Innovative solutions": "Innovatsion yechimlar",
       "A digital solution for any business": "Har qanday biznes uchun raqamli echim",
       "apps that help your business grow and thrive in the digital world": "sizning biznesingiz raqamli dunyoda o'sishi va gullab-yashnashiga yordam beradigan ilovalar",
       "We create modern web solutions, bots, and mobile apps": "Zamonaviy veb-yechimlar, botlar va mobil qurilmalarni yaratish",

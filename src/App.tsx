@@ -5,9 +5,17 @@ import  Team from './assets/components/team';
 import Gallery from './assets/components/gallery'; 
 import Form from './assets/components/form';
 import Footer from './assets/components/footer';
+// import { useEffect } from 'react';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 
 function App() {
- 
+//  useEffect(() => {
+//     AOS.init({
+//       duration: 1000, // animation duration
+//       once: true,     // whether animation should happen only once
+//     });
+//   }, []);
   return (
     <div className="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
       <Navbar />

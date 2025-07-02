@@ -1,37 +1,42 @@
-
-import { useState } from 'react';
-
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Gallery = () => {
-   const { t } = useTranslation();
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
+  const { t } = useTranslation();
   const [page, setPage] = useState(1);
   const itemsPerPage = 6;
 
-  const data = Array.from({ length: 12 }, (_, index) => ({
-    id: index + 1,
-    title: `Card ${index + 1}`,
-  }));
+  const data = [
+    { id: 1, Image: '/zein.project.jpg' },
+    { id: 2, Image: '' },
+    { id: 3, Image: '' },
+    { id: 4, Image: '' },
+    { id: 5, Image: '/zein.project.jpg' },
+    { id: 6, Image: '' },
+  ];
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
-  const pageItems = data.slice(
-    (page - 1) * itemsPerPage,
-    page * itemsPerPage
-  );
+  const pageItems = data.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
   return (
     <section className="bg-[#1A2436] min-h-screen text-white p-6">
       <div id="projects" className="flex justify-center">
-        <h3 className="inline-block text-sm text-[#86EFAC] bg-[#1E4741] px-4 py-2 mb-[30px] text-center rounded-full">
+        <h3 className="inline-block text-sm text-[#86EFAC] bg-[#1E4741] px-4 py-2 mb-8 text-center rounded-full">
           {t('Portfolio')}
         </h3>
       </div>
 
       <h2 className="text-3xl font-bold text-center mb-4">
-      {t('Our projects')}
+        {t('Our projects')}
       </h2>
 
-      <p className="text-[#94A3B8] font-normal text-center mb-[64px]">
+      <p className="text-[#94A3B8] font-normal text-center mb-16">
         {t('Successfully implemented projects for various business sectors')}
       </p>
 
@@ -39,43 +44,18 @@ const Gallery = () => {
         {pageItems.map((item) => (
           <div
             key={item.id}
-            className="bg-purple-200 text-purple-800 h-60 flex flex-col justify-center items-center rounded-md shadow-md"
+            className="flex flex-col justify-center items-center rounded-md"
+            data-aos="flip-right"
+            data-aos-delay={item.id * 100}
           >
-            <p>{item.title}</p>
+            <img
+              className="object-cover h-full w-full rounded-lg"
+              src={item.Image}
+            />
           </div>
         ))}
       </div>
-{/* 
-      <div className="flex justify-center items-center mt-8 space-x-2">
-        <button
-          onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
-          disabled={page === 1}
-          className="px-3 py-1 rounded hover:bg-gray-600 disabled:opacity-50"
-        >
-          {"<"}
-        </button>
 
-        {[...Array(totalPages)].map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setPage(i + 1)}
-            className={`px-3 py-1 rounded ${page === i + 1
-                 ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white'
-                 : '0 hover:bg-gray-600'
-              }`}
-          >
-            {i + 1}
-          </button>
-        ))}
-
-        <button
-          onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
-          disabled={page === totalPages}
-          className="px-3 py-1 rounded hover:bg-gray-600 disabled:opacity-50"
-        >
-          {">"}
-        </button>
-      </div> */}
     </section>
   );
 };

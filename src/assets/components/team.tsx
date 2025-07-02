@@ -1,69 +1,65 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from 'react-i18next';
-
-
 
 const teamData = [
   {
     name: "Odiljonov Behruz",
-    role: "Backend Developer",
+    role: "Frontend Developer",
     Image: '/public/bexruz-img.jpg'
   },
-
   {
     name: "Rustamov Ibrohim",
     role: "Frontend Developer",
     Image: 'public/ibrohim-img.jpg'
   },
-
   {
     name: "Azamova Laziza",
     role: "Frontend Developer",
     Image: '/laziza-img.jpg'
-   
-   },
-
+  },
   {
     name: "Abduraxmonov Sharif",
     role: "Project Manager",
     Image : '/sharif_img.jpg'
   },
-
   {
     name: "Xo`jayev Temur",
     role: "Team Leader",
     Image: 'public/temur-img.jpg'
   },
-
   {
     name: "Javohir Raximbayev",
     role: "Backend Developer",
     Image: 'public/javohir-img.jpg'
   },
-
-  // {
-  //   name: "Николай Фёдоров",
-  //   role: "QA Engineer",
-  // },
-
-
-  // {
-  //   name: "Ольга Алексеева",
-  //   role: "Data Scientist",
-  // },
-
-  // {
-  //   name: "Павел Морозов",
-  //   role: "Product Owner",
-  // },
-
+  {
+    name: "Rahmatjonov Abdulloh",
+    role: "Data Size",
+    Image: 'public/abdullox-img.jpg'
+  },
 ];
 
 function Team() {
   const { t } = useTranslation();
   const [startIndex, setStartIndex] = useState(0);
-  const cardsToShow = 4;
+  const [cardsToShow, setCardsToShow] = useState(4);
+
+  useEffect(() => {
+    const updateCardsToShow = () => {
+      if (window.innerWidth < 640) {
+        setCardsToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(4);
+      }
+    };
+
+    updateCardsToShow(); 
+    window.addEventListener("resize", updateCardsToShow);
+    return () => window.removeEventListener("resize", updateCardsToShow);
+  }, []);
 
   const handlePrev = () => {
     setStartIndex((prev) => Math.max(prev - 1, 0));
@@ -105,7 +101,6 @@ function Team() {
           <ChevronLeft size={28} />
         </button>
 
-
         <div className="flex space-x-6 overflow-hidden px-12">
           {visibleCards.map((person, index) => (
             <div
@@ -113,22 +108,17 @@ function Team() {
               className="bg-gray-700 rounded-xl w-72 p-6 text-center text-white relative shadow-lg"
             >
               <div className="mx-auto w-[100px] h-20 rounded-full mb-4 ">
-                <img className="
-                 object-cover h-[100px] w-[100px] rounded-full " src={person.Image} alt="" />
+                <img
+                  className="object-cover h-[100px] w-[100px] rounded-full"
+                  src={person.Image}
+                  alt={person.name}
+                />
               </div>
               <h3 className="text-lg font-semibold mt-5">{person.name}</h3>
               <p className="text-blue-400 text-sm mb-2">{person.role}</p>
-
-              <div className="flex items-center justify-center space-x-1 text-yellow-400 text-sm">
-                {/* {Array.from({ length: 5 }, (_, i) => (
-                  // <span key={i}>{i < Math.round(person.rating) ? "★" : "☆"}</span>
-                ))} */}
-                {/* <span className="text-white ml-1 text-xs">{person.rating.toFixed(1)}</span> */}
-              </div>
             </div>
           ))}
         </div>
-
 
         <button
           onClick={handleNext}
