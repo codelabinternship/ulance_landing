@@ -20,7 +20,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 };
 
   return (
-    <section className="px-4 py-10">
+    <section className="px-4 py-10 cursor-pointer">
       <div id="form" className="flex justify-center">
         <h3 className="inline-block text-sm text-[#93C5FD] bg-[#1E345B] px-4 py-2 mb-6 text-center rounded-full">
          {t('Contacts')}
@@ -50,7 +50,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
               value={form.firstName}
               onChange={handleChange}
               placeholder="Введите ваше имя"
-              className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400"
+              className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400 cursor-pointer"
               required
             />
           </div>
@@ -65,7 +65,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
               value={form.lastName}
               onChange={handleChange}
               placeholder="Введите вашу фамилию"
-              className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400"
+              className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400 cursor-pointer"
               required
             />
           </div>
@@ -81,7 +81,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             value={form.email}
             onChange={handleChange}
             placeholder="your@email.com"
-            className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400"
+            className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400 cursor-pointer"
             required
           />
         </div>
@@ -96,14 +96,14 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
             onChange={handleChange}
             placeholder="Расскажите о вашем проекте..."
             rows={4}
-            className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400"
+            className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400 cursor-pointer"
             required
           />
         </div>
 
         <button
           type="submit"
-          className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md text-center font-semibold hover:opacity-90 transition"
+          className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md text-center font-semibold hover:opacity-90 transition cursor-pointer"
         >
           {t('Send the Massage')}
         </button>

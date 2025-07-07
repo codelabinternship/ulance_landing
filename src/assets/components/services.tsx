@@ -35,14 +35,14 @@ function Services() {
     },
     {
       title: t('Automation'),
-      description: t('Integration and optimization of business processe using AI'),
+      description: t('Integration and optimization of business processes using AI'),
       color: 'bg-orange-500',
       image: ChaqmooqImage,
     },
   ];
 
   return (
-    <section className="px-6 py-10 bg-[#1A2436] text-white">
+    <section className="px-6 py-10 bg-[#1A2436] text-white cursor-pointer">
       <div id="services" className="flex justify-center">
         <h3 className="inline-block text-sm text-[#93C5FD] bg-[#42537C] px-4 py-2 mb-[30px] text-center rounded-full">
           {t('Our services')}

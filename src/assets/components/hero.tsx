@@ -1,11 +1,10 @@
 import {useTranslation} from 'react-i18next'
 
-
 function Hero() {
      const {t} = useTranslation();
   return (
     <section  
-     className="text-center px-4 py-20">
+     className="text-center px-4 py-20 ">
       <button className="text-sm text-[#93C5FD] border-1 rounded-4xl bg-[#42537C] p-2.5 mb-[30px]">🚀 {t('Innovative solutions')}</button>
       <h1 className="text-4xl text-[#DBEAFE] md:text-5xl font-bold mb-[26px]"> {t('A digital solution for any business')}<br/></h1>
       <p className="font-normal mb-[48px] text-[#CBD5E1]">{t('apps that help your business grow and thrive in the digital world')} <br/>{t('We create modern web solutions, bots, and mobile apps')}</p>

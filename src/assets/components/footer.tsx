@@ -85,13 +85,13 @@ const Footer = () => {
               <span className="text-white font-medium">
                {t('Adress')}
               </span><br />
-              Ташкент, Узбекистан
+              {t('Tashkent, Uzbekistan')}
             </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-gray-400 text-sm">
-        © 2024 ULANCE. Все права защищены. Создано с ❤️ в Узбекистане
+        {t('© 2024 ULANCE. All rights reserved. Created with ❤️ in Uzbekistan')}
       </div>
     </footer>
   );

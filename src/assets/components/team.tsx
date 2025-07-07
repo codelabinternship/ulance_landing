@@ -29,7 +29,7 @@ const teamData = [
     Image: '/temur-img.jpg',
   },
   {
-    name: "Javohir Raximbayev",
+    name: "Raximbayev Javohir ",
     role: "Backend Developer",
     Image: '/javohir-img.jpg',
   },
@@ -37,6 +37,11 @@ const teamData = [
     name: "Rahmatjonov Abdulloh",
     role: "Data Scientist", 
     Image: '/abdullox-img.jpg',
+  },
+  {
+    name: "Xudaykulova Diyora",
+    role: "Designer", 
+    Image: 'public/diyora-img.PNG',
   },
 ];
 
@@ -74,7 +79,7 @@ function Team() {
   const visibleCards = teamData.slice(startIndex, startIndex + cardsToShow);
 
   return (
-    <div id="team" className="w-full px-6 py-10">
+    <div id="team" className="w-full px-6 py-10 cursor-pointer">
       <div className="flex justify-center">
         <h3 className="inline-block text-sm text-[#D8B4FD] px-4 py-2 mb-6 text-center rounded-2xl bg-[#382F5D]">
           {t("Our team")}
@@ -93,7 +98,7 @@ function Team() {
         <button
           onClick={handlePrev}
           disabled={startIndex === 0}
-          className={`absolute left-0 z-10 bg-gray-800 p-2 rounded-full text-white shadow-md transition ${
+          className={`absolute left-0 z-10 p-2 rounded-full text-whiten bg-gray-800 hover:bg-[#3F4E6B] transition-color  ${
             startIndex === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-700"
           }`}
           aria-label="Previous"
@@ -120,17 +125,17 @@ function Team() {
           ))}
         </div>
 
-        <button
+        <button  
           onClick={handleNext}
           disabled={startIndex + cardsToShow >= teamData.length}
-          className={`absolute right-0 z-10 bg-gray-800 p-2 rounded-full text-white shadow-md transition ${
+          className={`absolute right-0 z-10 bg-gray-800  p-2 rounded-full text-white shadow-md transition cursor-pointer ${
             startIndex + cardsToShow >= teamData.length
-              ? "opacity-30 cursor-not-allowed"
+              ? "opacity-30 cursor-pointer"
               : "hover:bg-gray-700"
           }`}
           aria-label="Next"
         >
-          <ChevronRight size={28} />
+          <ChevronRight className="cursor-pointer" size={28} />
         </button>
       </div>
     </div>

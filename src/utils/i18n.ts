@@ -11,7 +11,7 @@ const resources = {
       "About us": "Biz haqimizda ",
       "Projects": "Loyihalar ",
       "Innovative solutions": "Innovatsion yechimlar",
-      "A digital solution for any business": "Har qanday biznes uchun raqamli echim",
+      "A digital solution for any business": "Har qanday biznes uchun raqamli yechim",
       "apps that help your business grow and thrive in the digital world": "sizning biznesingiz raqamli dunyoda o'sishi va gullab-yashnashiga yordam beradigan ilovalar",
       "We create modern web solutions, bots, and mobile apps": "Zamonaviy veb-yechimlar, botlar va mobil qurilmalarni yaratish",
       "Contact us": "Biz bilan bog'laning",
@@ -48,6 +48,8 @@ const resources = {
       "Consultations": "Maslahat",
       "Number": "Raqam",
       "Adress": "Manzil",
+      "Tashkent, Uzbekistan": "Toshkent, Uzbekiston",
+      "© 2024 ULANCE. All rights reserved. Created with ❤️ in Uzbekistan": "© 2024 ULANCE. Barcha huquqlar himoyalangan. ❤️ Bilan O'zbekistonda yaratilgan"
     }
   },
   ru: {
@@ -92,8 +94,9 @@ const resources = {
       "Services": "Услуги",
       "Consultations": "Консультации",
       "Number": "Номер",
-      "Adress": "Адрес"
-
+      "Adress": "Адрес",
+       "Tashkent, Uzbekistan": "Ташкент, Узбекистан",
+      "© 2024 ULANCE. All rights reserved. Created with ❤️ in Uzbekistan": "© УЛАНС, 2024. Все права защищены. Создано с ❤️ в Узбекистане"
     }
   }
 };

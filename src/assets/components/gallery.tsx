@@ -25,7 +25,7 @@ const Gallery = () => {
   const pageItems = data.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
   return (
-    <section className="bg-[#1A2436] min-h-screen text-white p-6">
+    <section className="bg-[#1A2436] min-h-screen text-white p-6 cursor-pointer">
       <div id="projects" className="flex justify-center">
         <h3 className="inline-block text-sm text-[#86EFAC] bg-[#1E4741] px-4 py-2 mb-8 text-center rounded-full">
           {t('Portfolio')}
