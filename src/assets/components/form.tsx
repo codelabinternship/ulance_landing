@@ -10,104 +10,115 @@ function Form() {
     message: "",
   });
 
- const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  setForm({ ...form, [e.target.name]: e.target.value });
-};
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  console.log("Form submitted:", form);
-};
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted:", form);
+  };
 
   return (
-    <section className="px-4 py-10 cursor-pointer">
-      <div id="form" className="flex justify-center">
-        <h3 className="inline-block text-sm text-[#93C5FD] bg-[#1E345B] px-4 py-2 mb-6 text-center rounded-full">
-         {t('Contacts')}
-        </h3>
-      </div>
+    <section className="relative px-4 py-10 overflow-hidden">
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+        src="/995d39a878ffc35b5aa926d348d79b92.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
 
-      <h2 className="text-3xl font-bold text-center mb-4">
-        {t('Contact us')}
-      </h2>
+      <div className="relative z-10">
+        <div id="form" className="flex justify-center">
+          <h3 className="inline-block text-sm text-[#93C5FD] bg-[#1E345B] px-4 py-2 mb-6 text-center rounded-full">
+            {t('Contacts')}
+          </h3>
+        </div>
 
-      <p className="text-[#94A3B8] font-normal text-center mb-16">
-      {t('Are you ready to discuss your project? Write to us and we will contact you soon')}
-      </p>
+        <h2 className="text-3xl font-bold text-center mb-4">
+          {t('Contact us')}
+        </h2>
 
-      <form
-        onSubmit={handleSubmit}
-        className=" p-8 rounded-xl w-full max-w-2xl mx-auto shadow-lg space-y-6 bg-[#8C929B]"
-      >
-        <div className="flex space-x-4">
-          <div className="w-1/2">
-            <label className="block text-white mb-1">
-              {t('Name')}
+        <p className="text-[#94A3B8] font-normal text-center mb-16">
+          {t('Are you ready to discuss your project? Write to us and we will contact you soon')}
+        </p>
+
+        <form
+          onSubmit={handleSubmit}
+          className="relative z-10 bg-[#8C929B] p-8 rounded-xl w-full max-w-2xl mx-auto shadow-lg space-y-6"
+        >
+          <div className="flex space-x-4">
+            <div className="w-1/2">
+              <label className="block text-white mb-1">
+                {t('Name')}
               </label>
-            <input
-              type="text"
-              name="firstName"
-              value={form.firstName}
-              onChange={handleChange}
-              placeholder="Введите ваше имя"
-              className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400 cursor-pointer"
-              required
-            />
+              <input
+                type="text"
+                name="firstName"
+                value={form.firstName}
+                onChange={handleChange}
+                placeholder={t('Enter your first name')}
+                className="w-full p-3 rounded-md bg-[#5F6877] text-white placeholder-gray-400"
+                required
+              />
+            </div>
+
+            <div className="w-1/2">
+              <label className="block text-white mb-1">
+                {t('Last name')}
+              </label>
+              <input
+                type="text"
+                name="lastName"
+                value={form.lastName}
+                onChange={handleChange}
+                placeholder={t('Enter your last name')}
+                className="w-full p-3 rounded-md bg-[#5F6877] text-white placeholder-gray-400"
+                required
+              />
+            </div>
           </div>
 
-          <div className="w-1/2">
+          <div>
             <label className="block text-white mb-1">
-              {t('Firstname')}
+              {t('Email')}
             </label>
             <input
-              type="text"
-              name="lastName"
-              value={form.lastName}
+              type="email"
+              name="email"
+              value={form.email}
               onChange={handleChange}
-              placeholder="Введите вашу фамилию"
-              className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400 cursor-pointer"
+              placeholder="your@email.com"
+              className="w-full p-3 rounded-md bg-[#5F6877] text-white placeholder-gray-400"
               required
             />
           </div>
-        </div>
 
-        <div>
-          <label className="block text-white mb-1">
-            {t('Email')}
-          </label>
-          <input
-            type="email"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="your@email.com"
-            className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400 cursor-pointer"
-            required
-          />
-        </div>
+          <div>
+            <label className="block text-white mb-1">
+              {t('Message')}
+            </label>
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              placeholder={t('Tell us about your project...')}
+              rows={4}
+              className="w-full p-3 rounded-md bg-[#5F6877] text-white placeholder-gray-400"
+              required
+            />
+          </div>
 
-        <div>
-          <label className="block text-white mb-1">
-            {t('Massage')}
-          </label>
-          <textarea
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="Расскажите о вашем проекте..."
-            rows={4}
-            className="w-full p-3 rounded-md bg-[#5F6877]   text-white placeholder-gray-400 cursor-pointer"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md text-center font-semibold hover:opacity-90 transition cursor-pointer"
-        >
-          {t('Send the Massage')}
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-md text-center font-semibold hover:opacity-90 transition"
+          >
+            {t('Send the Message')}
+          </button>
+        </form>
+      </div>
     </section>
   );
 }

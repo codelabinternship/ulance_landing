@@ -42,7 +42,8 @@ function Services() {
   ];
 
   return (
-    <section className="px-6 py-10 bg-[#1A2436] text-white cursor-pointer">
+    <section className="px-6 py-10 bg-[#1A2436] text-white cursor-pointe " >
+
       <div id="services" className="flex justify-center">
         <h3 className="inline-block text-sm text-[#93C5FD] bg-[#42537C] px-4 py-2 mb-[30px] text-center rounded-full">
           {t('Our services')}
@@ -58,27 +59,28 @@ function Services() {
       </p>
 
       <div className="grid md:grid-cols-4 gap-6">
-        {services.map((service, i) => (
-          <div
-            key={i}
-            className="p-6 rounded-xl bg-[#2F3B52] hover:bg-[#3F4E6B] transition-color"
-            data-aos="fade-right"
-            data-aos-delay={i *100} 
-          >
-            <div className={`w-12 h-12 mb-4 mx-auto rounded ${service.color}`}>
-              <img className="p-2" src={service.image} alt={service.title} />
-            </div>
-
-            <h4 className="text-xl font-semibold text-center mb-[12px]">
-              {service.title}
-            </h4>
-
-            <p className="text-center text-[#CBD5E1]">
-              {service.description}
-            </p>
-          </div>
-        ))}
+  {services.map((service, i) => (
+    <div
+      key={i}
+      className="p-6 rounded-xl bg-[#2F3B52]/40 backdrop-blur-md hover:bg-[#3F4E6B]/50 transition-all duration-300 shadow-md"
+      data-aos="fade-right"
+      data-aos-delay={i * 100}
+    >
+      <div className={`w-12 h-12 mb-4 mx-auto rounded ${service.color}`}>
+        <img className="p-2" src={service.image} alt={service.title} />
       </div>
+
+      <h4 className="text-xl font-semibold text-center mb-[12px]">
+        {service.title}
+      </h4>
+
+      <p className="text-center text-[#CBD5E1]">
+        {service.description}
+      </p>
+    </div>
+  ))}
+</div>
+
     </section>
   );
 }
