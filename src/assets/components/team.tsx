@@ -41,7 +41,7 @@ const teamData = [
   {
     name: "Xudaykulova Diyora",
     role: "Designer", 
-    Image: 'public/diyora-img.PNG',
+    Image: '/diyora.png',
   },
 ];
 
