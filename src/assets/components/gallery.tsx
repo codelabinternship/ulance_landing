@@ -14,11 +14,8 @@ const Gallery = () => {
 
   const data = [
     { id: 1, Image: '/zein.project.jpg' },
-    { id: 2, Image: '' },
-    { id: 3, Image: '' },
-    { id: 4, Image: '' },
-    { id: 5, Image: '/zein.project.jpg' },
-    { id: 6, Image: '' },
+    { id: 2, Image: '/best-buy.png' },
+    { id: 3, Image: 'ulance.png' },
   ];
 
   const totalPages = Math.ceil(data.length / itemsPerPage);

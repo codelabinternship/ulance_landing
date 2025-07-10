@@ -94,7 +94,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-gray-700 mt-10 pt-4 text-center text-gray-400 text-sm">
-        {t('© 2024 ULANCE. All rights reserved. Created with ❤️ in Uzbekistan')}
+        {t('© 2025 ULANCE. All rights reserved. Created with ❤️ in Uzbekistan')}
       </div>
     </footer>
   );
