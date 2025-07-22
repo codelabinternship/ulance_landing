@@ -40,8 +40,13 @@ const teamData = [
   },
   {
     name: "Xudaykulova Diyora",
-    role: "Designer", 
+    role: " Figma Designer", 
     Image: '/diyora.png',
+  },
+  {
+    name: "Gafforova Sevinch",
+    role: " Figma Designer", 
+    Image: '/sevinch_photo.JPG', // ✅ fixed path
   },
 ];
 
@@ -79,7 +84,7 @@ function Team() {
   const visibleCards = teamData.slice(startIndex, startIndex + cardsToShow);
 
   return (
-    <div id="team" className="w-full px-6 py-10 cursor-pointer">
+    <div id="team" className="w-full px-6 py-10">
       <div className="flex justify-center">
         <h3 className="inline-block text-sm text-[#D8B4FD] px-4 py-2 mb-6 text-center rounded-2xl bg-[#382F5D]">
           {t("Our team")}
@@ -98,10 +103,10 @@ function Team() {
         <button
           onClick={handlePrev}
           disabled={startIndex === 0}
-          className={`absolute left-0 z-10 p-2 rounded-full text-whiten bg-gray-800 hover:bg-[#3F4E6B] transition-color  ${
-            startIndex === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-700"
+          className={`absolute left-0 z-10 p-2 rounded-full text-white bg-gray-800 transition ${
+            startIndex === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-[#3F4E6B]"
           }`}
-          aria-label="Previous"
+          aria-label="Previous team members"
         >
           <ChevronLeft size={28} />
         </button>
@@ -110,7 +115,7 @@ function Team() {
           {visibleCards.map((person, index) => (
             <div
               key={`${person.name}-${index}`}
-              className="bg-gray-700 rounded-xl w-72 p-6 text-center text-white relative shadow-lg"
+              className="bg-gray-700 rounded-xl w-72 p-6 text-center text-white shadow-lg"
             >
               <div className="mx-auto w-[100px] h-[100px] rounded-full overflow-hidden mb-4">
                 <img
@@ -120,7 +125,9 @@ function Team() {
                 />
               </div>
               <h3 className="text-lg font-semibold mt-5">{person.name}</h3>
-              <p className="text-blue-400 text-sm mb-2">{person.role}</p>
+              <p className="text-blue-400 text-sm w-[150px] h-[40px] mx-auto rounded-lg bg-[#465B81] flex items-center justify-center">
+                {person.role}
+              </p>
             </div>
           ))}
         </div>
@@ -128,14 +135,14 @@ function Team() {
         <button  
           onClick={handleNext}
           disabled={startIndex + cardsToShow >= teamData.length}
-          className={`absolute right-0 z-10 bg-gray-800  p-2 rounded-full text-white shadow-md transition cursor-pointer ${
+          className={`absolute right-0 z-10 bg-gray-800 p-2 rounded-full text-white shadow-md transition ${
             startIndex + cardsToShow >= teamData.length
-              ? "opacity-30 cursor-pointer"
+              ? "opacity-30 cursor-not-allowed"
               : "hover:bg-gray-700"
           }`}
-          aria-label="Next"
+          aria-label="Next team members"
         >
-          <ChevronRight className="cursor-pointer" size={28} />
+          <ChevronRight size={28} />
         </button>
       </div>
     </div>
